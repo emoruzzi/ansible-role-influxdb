@@ -1,0 +1,6 @@
+---
+
+influxdb_bind_address:
+influxdb_bind_port:
+influxdb_user: influxdb
+influxdb_group: influxdb
