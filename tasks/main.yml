@@ -18,6 +18,14 @@
     name=influxdb
     state=latest
 
+- name: Install InfluxDB Config
+  template:
+    src=influxdb.conf.j2
+    dest=/etc/influxdb/influxdb.conf
+    owner=root
+    group=root
+    mode=0644
+
 - name: Start InfluxDB
   service:
     name=influxdb
