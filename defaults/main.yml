@@ -4,3 +4,12 @@ influxdb_bind_address:
 influxdb_bind_port:
 influxdb_user: influxdb
 influxdb_group: influxdb
+influxdb_admin_enabled: true
+influxdb_admin_bind_address: "{{ ansible_host }}:8073"
+influxdb_admin_https_enabled: true
+influxdb_admin_https_certificate: "/etc/ssl/influxdb.pem"
+influxdb_http_enabled: true
+influxdb_http_bind_address: "{{ ansible_host }}:443"
+influxdb_https_enabled: true
+influxdb_http_https_certificate: "/etc/ssl/influxdb.pem"
+influxdb_http_https_private_key: ""
