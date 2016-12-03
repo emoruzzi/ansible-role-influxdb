@@ -186,13 +186,13 @@
 
 # [admin]
   # Determines whether the admin service is enabled.
-  enabled = {{ influxdb_admin_enabled }}
+  enabled = {{ influxdb_admin_enabled | lower }}
 
   # The default bind address used by the admin service.
   bind-address = "{{ influxdb_admin_bind_address }}"
 
   # Whether the admin service should use HTTPS.
-  https-enabled = {{ influxdb_admin_https_enabled }}
+  https-enabled = {{ influxdb_admin_https_enabled | lower }}
 
   # The SSL certificate used when HTTPS is enabled.
   https-certificate = "{{ influxdb_admin_https_certificate }}"
@@ -206,7 +206,7 @@
 
 # [http]
   # Determines whether HTTP endpoint is enabled.
-  enabled = {{ influxdb_http_enabled }}
+  enabled = {{ influxdb_http_enabled | lower }}
 
   # The bind address used by the HTTP service.
   bind-address = "{{ influxdb_http_bind_address }}"
@@ -228,7 +228,7 @@
   # pprof-enabled = true
 
   # Determines whether HTTPS is enabled.
-  https-enabled = {{ influxdb_http_https_enabled }}
+  https-enabled = {{ influxdb_http_https_enabled | lower }}
 
   # The SSL certificate to use when HTTPS is enabled.
   https-certificate = "{{ influxdb_http_https_certificate }}"
