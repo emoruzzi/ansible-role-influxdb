@@ -184,7 +184,7 @@
 ###
 ### NOTE: This interface is deprecated as of 1.1.0 and will be removed in a future release.
 
-# [admin]
+[admin]
   # Determines whether the admin service is enabled.
   enabled = {{ influxdb_admin_enabled | lower }}
 
@@ -204,7 +204,7 @@
 ### mechanism for getting data into and out of InfluxDB.
 ###
 
-# [http]
+[http]
   # Determines whether HTTP endpoint is enabled.
   enabled = {{ influxdb_http_enabled | lower }}
 
@@ -334,10 +334,10 @@
 ### Controls one or many listeners for collectd data.
 ###
 
-# [[collectd]]
-  # enabled = false
-  # bind-address = ":25826"
-  # database = "collectd"
+[collectd]
+  enabled = {{ influxdb_collectd_enabled | lower }}
+  bind-address = {{ influxdb_collectd_bind_address }}
+  database = {{ influxdb_collectd_collectd }}
   # retention-policy = ""
   # typesdb = "/usr/share/collectd/types.db"
 
@@ -346,13 +346,13 @@
   # will buffer points in memory if you have many coming in.
 
   # Flush if this many points get buffered
-  # batch-size = 5000
+  batch-size = {{ influxdb_collectd_batch_size }}
 
   # Number of batches that may be pending in memory
-  # batch-pending = 10
+  batch-pending = {{ influxdb_collectd_batch_pending }}
 
   # Flush at least this often even if we haven't hit buffer limit
-  # batch-timeout = "10s"
+  batch-timeout = {{ influxdb_collectd_batch_timeout }}
 
   # UDP Read buffer size, 0 means OS default. UDP listener will fail if set above OS max.
   # read-buffer = 0
