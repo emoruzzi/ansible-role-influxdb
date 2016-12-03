@@ -336,8 +336,8 @@
 
 [collectd]
   enabled = {{ influxdb_collectd_enabled | lower }}
-  bind-address = {{ influxdb_collectd_bind_address }}
-  database = {{ influxdb_collectd_database }}
+  bind-address = "{{ influxdb_collectd_bind_address }}"
+  database = "{{ influxdb_collectd_database }}"
   # retention-policy = ""
   # typesdb = "/usr/share/collectd/types.db"
 
@@ -352,7 +352,7 @@
   batch-pending = {{ influxdb_collectd_batch_pending }}
 
   # Flush at least this often even if we haven't hit buffer limit
-  batch-timeout = {{ influxdb_collectd_batch_timeout }}
+  batch-timeout = "{{ influxdb_collectd_batch_timeout }}"
 
   # UDP Read buffer size, 0 means OS default. UDP listener will fail if set above OS max.
   # read-buffer = 0
