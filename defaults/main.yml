@@ -10,6 +10,6 @@ influxdb_admin_https_enabled: true
 influxdb_admin_https_certificate: "/etc/ssl/influxdb.pem"
 influxdb_http_enabled: true
 influxdb_http_bind_address: "{{ ansible_host }}:443"
-influxdb_https_enabled: true
+influxdb_http_https_enabled: true
 influxdb_http_https_certificate: "/etc/ssl/influxdb.pem"
 influxdb_http_https_private_key: ""
